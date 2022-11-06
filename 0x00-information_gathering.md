@@ -192,14 +192,3 @@ htpasswd: ASCII text
 └─>  cat htpasswd
 root:437394baff5aa33daa618be47b75cb49
 ```
-
-[`htpasswd`](https://en.wikipedia.org/wiki/.htpasswd) is a canonical name used to store username and hashed password for basic authentification on HTTP server. Optionally, password is prepended by an algorithm specifier.
-
-As there is not specified, a [quick search](https://md5.gromweb.com/?md5=437394baff5aa33daa618be47b75cb49) of hashed password reveal that reverse equals to the following string `qwerty123@`.
-
-Confirm that by calculating md5 message digest on local machine.
-```sh
-┌──$ [~/42/2022/darkly]
-└─>  echo -n "qwerty123@" | md5
-437394baff5aa33daa618be47b75cb49
-```
