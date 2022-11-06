@@ -1,6 +1,6 @@
 # Information Gathering
 
-## Web server fingerprintint - [Banner grabbing](https://en.wikipedia.org/wiki/Banner_grabbing)
+## [WSTG-INFO-02] Web server fingerprintint - [Banner grabbing](https://en.wikipedia.org/wiki/Banner_grabbing)
 
 Establish a connection to the web server and send an HTTP request to gain information about the running service on the host, by examining its response header.
 
