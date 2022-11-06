@@ -60,6 +60,7 @@ Set-Cookie: I_am_admin=68934a3e9455fa72420237eb05902327; expires=Sun, 06-Nov-202
 </details>
 
 Server is running [Nginx 1.4.6](https://nginx.org/en/CHANGES-1.4) on Ubuntu.
+The `X-Powered-By` field specifies the technology used by the web server which is [PHP 5.5.9-1](https://prototype.php.net/versions/5.5.9/).
 That information will narrow down a list of applicable exploits.
 
 ## Remediation
