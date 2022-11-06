@@ -61,3 +61,10 @@ Set-Cookie: I_am_admin=68934a3e9455fa72420237eb05902327; expires=Sun, 06-Nov-202
 
 Server is running [Nginx 1.4.6](https://nginx.org/en/CHANGES-1.4) on Ubuntu.
 That information will narrow down a list of applicable exploits.
+
+## Remediation
+Exposing server information can lead attacker to find version-specific vulnerabilities that can be used.
+
+It is recommended to :
+- Obscure web server information in headers
+- Use proxy server to leave client with no knowledge of the web server behind
