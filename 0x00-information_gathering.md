@@ -63,6 +63,98 @@ Server is running [Nginx 1.4.6](https://nginx.org/en/CHANGES-1.4) on Ubuntu.
 The `X-Powered-By` field specifies the technology used by the web server which is [PHP 5.5.9-1](https://prototype.php.net/versions/5.5.9/).
 That information will narrow down a list of applicable exploits.
 
+## Using automated scanning tools
+Automated scanning tools are used within [Dynamic application security testing (DAST)](https://owasp.org/www-community/Vulnerability_Scanning_Tools) and are able to perform more robust scans.
+<details>
+<summary>Using Nmap</summary>
+
+```sh
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sV -O -A 192.168.56.101
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-11-06 06:29 EST
+Nmap scan report for 192.168.56.101
+Host is up (0.0016s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+80/tcp open  http    nginx 1.4.6 (Ubuntu)
+| http-robots.txt: 2 disallowed entries
+|_/whatever /.hidden
+|_http-title: BornToSec - Web Section
+|_http-server-header: nginx/1.4.6 (Ubuntu)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.92%E=4%D=11/6%OT=80%CT=1%CU=33514%PV=Y%DS=2%DC=T%G=Y%TM=63679AB
+OS:A%P=x86_64-pc-linux-gnu)SEQ(SP=11%GCD=FA00%ISR=9C%TI=I%CI=RD%TS=U)OPS(O1
+OS:=M5B4%O2=M5B4%O3=M5B4%O4=M5B4%O5=M5B4%O6=M5B4)WIN(W1=FFFF%W2=FFFF%W3=FFF
+OS:F%W4=FFFF%W5=FFFF%W6=FFFF)ECN(R=Y%DF=N%T=41%W=FFFF%O=M5B4%CC=N%Q=)T1(R=Y
+OS:%DF=N%T=41%S=O%A=S+%F=AS%RD=0%Q=)T2(R=Y%DF=N%T=100%W=0%S=Z%A=S%F=AR%O=%R
+OS:D=0%Q=)T3(R=Y%DF=N%T=100%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T4(R=Y%DF=N%T=100%
+OS:W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=N%T=100%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q
+OS:=)T6(R=Y%DF=N%T=100%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=N%T=100%W=0%S=Z
+OS:%A=S%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=3D%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%
+OS:RUCK=G%RUD=G)IE(R=N)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   0.79 ms 10.0.2.2
+2   0.84 ms 192.168.56.101
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 19.97 seconds
+```
+</details>
+<details>
+<summary>Using Nikno</summary>
+
+```sh
+┌──(kali㉿kali)-[~]
+└─$ nikto -host http://192.168.56.101
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LC_CTYPE = "UTF-8",
+        LC_TERMINAL = "iTerm2",
+        LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+- Nikto v2.1.6
+---------------------------------------------------------------------------
++ Target IP:          192.168.56.101
++ Target Hostname:    192.168.56.101
++ Target Port:        80
++ Start Time:         2022-11-06 06:25:54 (GMT-5)
+---------------------------------------------------------------------------
++ Server: nginx/1.4.6 (Ubuntu)
++ Retrieved x-powered-by header: PHP/5.5.9-1ubuntu4.29
++ The anti-clickjacking X-Frame-Options header is not present.
++ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type
++ Cookie I_am_admin created without the httponly flag
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ OSVDB-3268: /whatever/: Directory indexing found.
++ Entry '/whatever/' in robots.txt returned a non-forbidden or redirect HTTP code (200)
++ Entry '/.hidden' in robots.txt returned a non-forbidden or redirect HTTP code (301)
++ "robots.txt" contains 2 entries which should be manually viewed.
++ nginx/1.4.6 appears to be outdated (current is at least 1.14.0)
++ OSVDB-3092: /admin/: This might be interesting...
++ OSVDB-3092: /css/: This might be interesting...
++ OSVDB-3092: /includes/: This might be interesting...
++ OSVDB-3093: /admin/index.php: This might be interesting... has been seen in web logs from an unknown scanner.
++ 7931 requests: 7 error(s) and 14 item(s) reported on remote host
++ End Time:           2022-11-06 06:26:16 (GMT-5) (22 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+```
+</details>
+
+[`robots.txt`](https://www.robotstxt.org/robotstxt.html) lies on the server that contains instructions about the server.
+
+It reveals that `/whatever` and `/.hidden` directories are present on the server.
+
 ## Remediation
 Exposing server information can lead attacker to find version-specific vulnerabilities that can be used.
 
