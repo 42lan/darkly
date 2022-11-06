@@ -82,6 +82,9 @@ Disallow: /.hidden
 It reveals that `/whatever` and `/.hidden` directories are present on the server.
 
 [`/whatever`](http://192.168.56.101/whatever) contains a file name [`htpasswd`](http://192.168.56.101/whatever/htpasswd).
+<details>
+<summary>cURL htpasswd</summary>
+
 ```sh
 ┌──$ [~/42/2022/darkly]
 └─>  curl http://192.168.56.101/whatever/
@@ -104,6 +107,7 @@ htpasswd: ASCII text
 └─>  cat htpasswd
 root:437394baff5aa33daa618be47b75cb49
 ```
+</details>
 
 ## [WSTG-INFO-04] Web server applications
 
