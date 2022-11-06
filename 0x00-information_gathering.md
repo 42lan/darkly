@@ -41,8 +41,8 @@ X-Powered-By: PHP/5.5.9-1ubuntu4.29
 Set-Cookie: I_am_admin=68934a3e9455fa72420237eb05902327; expires=Sun, 06-Nov-2022 11:08:34 GMT; Max-Age=3600
 
 Connection closed by foreign host.
-</details>
 ```
+</details>
 <details>
 <summary>Using curl</summary>
 
