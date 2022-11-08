@@ -17,5 +17,5 @@ Non ce n'est toujours pas bon ...
 Toujours pas tu vas craquer non ?
 Tu veux de l'aide ? Moi aussi ! 
 ```
-## Remidiation
+## Remediation
 Detect web scraping in order to block
