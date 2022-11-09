@@ -35,6 +35,8 @@ Request headers needs to be set with those quoted values.
 Using the plugin [ModHeader](https://modheader.com/) they can be substitued.
 ```
 Referer:https://www.nsa.gov/
-User-Agent:ft_bornToSec
+User-Agent:ft_bornToSectrash:///request_headers%20referer%20user-agent.png
 ```
+![request_headers referer user-agent](https://user-images.githubusercontent.com/22397481/200792965-25c908e1-2cc5-4cd3-854a-bcdc1dd86f00.png)
+
 </details>
