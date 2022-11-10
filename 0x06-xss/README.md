@@ -26,13 +26,15 @@ function validate_form(thisform) {
 }
 ```
 
-## Reference Error
+## Reference Errors
 1. `onClick` attribute reference undefined function `checkForm()`.
 
 2. Following code line reference non-existent variable (typo `mtxMessage` that should be `mtxtMessage` as defined in HTML form), it is why the message can be empty.
 ```js
 validate_required(mtxMessage,"Message can not be empty.")
 ```
+![image](https://user-images.githubusercontent.com/22397481/201078471-8ac15945-971f-4652-9071-96a1fd78dbd0.png)
+
 
 However, it do not check if the user input contains HTML tags or JS script.
 
