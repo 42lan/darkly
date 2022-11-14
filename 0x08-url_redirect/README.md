@@ -9,3 +9,5 @@ http://192.168.56.101/index.php?page=redirect&site=instagram
 ```
 
 By changing valeu of `site` other than 3 social media name, gives the flag.
+
+![image](https://user-images.githubusercontent.com/22397481/201696064-3cf35a61-a59a-4ea8-acb0-72f943b46724.png)
