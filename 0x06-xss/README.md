@@ -38,5 +38,7 @@ validate_required(mtxMessage,"Message can not be empty.")
 
 However, it do not check if the user input contains HTML tags or JS script.
 
+> The limitation can be bypassed by removing [`maxlength` attribute](https://www.w3schools.com/tags/att_input_maxlength.asp) on `txtName` and `mtxtMessage` input fields.
+
 ## Remediation
 [Validate user input](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html) to prevent save malformed data.
