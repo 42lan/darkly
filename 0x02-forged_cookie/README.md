@@ -1,4 +1,4 @@
-# Forged cookie
+# [WSTG-IDNT-01] Forged cookie
 
 Visiting [home page](http://192.168.56.101/) server sends a cookies to be set via Response Headers.
 
