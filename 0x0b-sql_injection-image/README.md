@@ -36,7 +36,7 @@ By tring all the columns, with using columns `title`, and `comment`, the followi
 1 AND 1=1 UNION SELECT title, comment FROM list_images
 ```
 
-(image here)
+<img width="1163" alt="image" src="https://user-images.githubusercontent.com/46742040/202277463-931b337f-c8cb-48c2-bbb4-1db5929509cf.png">
 
 as it shows, let's decrypt the password
 ```
