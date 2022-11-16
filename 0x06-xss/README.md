@@ -1,4 +1,4 @@
-# Cross Site Scripting (XSS)
+# [WSTG-INPV-01] Cross Site Scripting (XSS)
 
 [Feedback form](http://192.168.56.101/?page=feedback) has event attribute `onsumbit` that call function to validated it, by JavaScript, so that the value of `Name` and `Message` isn't empty.
   ```js
