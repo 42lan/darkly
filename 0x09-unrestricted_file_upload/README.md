@@ -2,7 +2,7 @@
 
 [Add image](http://192.168.56.101/?page=upload) contains a `<form>` element with attribute `enctype="multipart/form-data"` which specifies how the form-data should be encoded when submitting.
 
-Only `jpeg/jpg` extension is allowed to be upload.
+Only `jpeg` extension is allowed to be upload.
 
 <img width="1021" alt="image" src="https://user-images.githubusercontent.com/46742040/202015974-04c11238-a64c-472b-a20b-43f59046f518.png">
 
