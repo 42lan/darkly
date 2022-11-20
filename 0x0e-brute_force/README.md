@@ -22,7 +22,7 @@ where=CHAR([77, 101, 109, 98, 101, 114, 95, 66, 114, 117, 116, 101, 95, 70, 111,
 
 by doing so, we can find `db_default` table in `Member_Brute_Force` schema:
 
-(Image Here)
+<img width="1186" alt="image" src="https://user-images.githubusercontent.com/46742040/202880957-1ac03f76-c4e2-4c15-a9af-74c0bc92f5d8.png">
 
 In order to take a look at the `db_default` table in `Member_Brute_Force` schema, following query needs to be executed, but as the php causes an error, it needs to be changed as well
 
@@ -35,7 +35,7 @@ In order to take a look at the `db_default` table in `Member_Brute_Force` schema
 
 By doing so, we can acknowledge there are four columns `one`, `id`, `username`, `password`
 
-(image)
+<img width="1223" alt="image" src="https://user-images.githubusercontent.com/46742040/202880932-0224ef49-d154-4254-ad4b-629b66adbf1c.png">
 
 ## Remediation
 
