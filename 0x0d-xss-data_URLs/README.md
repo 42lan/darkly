@@ -9,7 +9,8 @@ So, by editing paramter to query string `src=` to `data:text/html,%3Ch1%3EHello%
 
 Not only any data can be passed, but script can be passed to this tag and this means the code can be executed, as shown on the [example](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
 
-(image with hi in here)
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/46742040/202879013-06386e15-be43-4894-9a3c-c3630a569a0e.png">
+(a browser with script `alert('hi')`)
 
 By tring base64 encoded string for the `src` paramter, with [appropriate syntax](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs#syntax), the following address will give the flag
 
