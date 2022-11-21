@@ -59,5 +59,8 @@ Success: The password is shadow
 
 Loggin in with ID and password found, `id: admin, pw: shadow`, the token will be present.
 
+<img width="1153" alt="image" src="https://user-images.githubusercontent.com/46742040/203154937-974c0553-fb11-48d0-b995-d1630767e5c3.png">
+
+
 ## Remediation
 
