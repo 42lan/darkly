@@ -6,15 +6,32 @@ The value of `data` attribute change accordingly the value GET parameter `src` i
 
 Using special format, called [data URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs), in `src` allow to embed small inline data in HTML document.
 
-So, by editing paramter to query string `src=` to `data:text/html,%3Ch1%3EHello%2C%20World%21%3C%2Fh1%3E` will display 'Hello, World!' to the browser.
+<details>
+<summary>Embed a text file</summary>
 
-<img width="442" alt="image" src="https://user-images.githubusercontent.com/46742040/202878504-fda66088-c43e-48e8-bcd3-7092ba648d69.png">
-(a browser image showing `Hello, World!`)
+```
+data:text/html,<h1 style="font-size:75px; background-color:red">Hello World!</h1>
+```
+</details>
 
-Not only any data can be passed, but script can be passed to this tag and this means the code can be executed, as shown on the [example](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
+<details>
+<summary>Embed an image</summary>
 
+```
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAo0lEQVR42u3RAQ0AAAjDMO5fNCCDkG4SmupdZwoQIAICRECACAgQAQECBIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACAgQIEAEBIiAABGQ7w2x48edS3GF7AAAAABJRU5ErkJggg==
+```
+</details>
+
+Not only any data can be passed, but script can be used to this which allow execution of the code, as shown on the [example](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/46742040/202879013-06386e15-be43-4894-9a3c-c3630a569a0e.png">
-(a browser with script alert('hi'))
+<details>
+<summary>Embed a scipt</summary>
+
+```
+data:text/html,<script>alert('42 - The answer to life, the universe and everything')</script>
+```
+</details>
+
 
 By tring base64 encoded string for the `src` paramter, with [appropriate syntax](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs#syntax), the following address will give the flag
 
