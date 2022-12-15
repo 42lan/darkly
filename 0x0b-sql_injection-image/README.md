@@ -51,7 +51,7 @@ Url : Hack me ?
 f2a29020ef3132e01dd61df97fd33ec8d7fcd1388cc9601e7db691d17d4d6188
 ```
 
-# Remedattion
+## Remediation
 A SQL Injection is an attack of injectin query through the input data from the client to the application. It can cause modify, removal, or admin operation to the databases. This can happen when unintended data enters a program from an untrusted source, or the data is used to dynamically construct a SQL query.
 
 In order to prevent,
