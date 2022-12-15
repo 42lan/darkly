@@ -45,6 +45,6 @@ The flag is : 928d819fc19405ae09921a2b71227bd9aba106f9d2d37ac412e9e5a750f1506d
 [...]
 ```
 
-# Remedattion
+# Remediation
 - https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html
 - https://owasp.org/www-community/attacks/xss/
