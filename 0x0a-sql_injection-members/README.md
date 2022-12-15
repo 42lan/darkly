@@ -1,20 +1,11 @@
 # SQL Injection (MEMBERS)
 
 On [Members page](http://192.168.56.101/index.php?page=member) a form allows to search information on a given member using its ID number.
+<details>
+<summary>IDs 0 to 5</summary>
 
-```
-[...]
-ID: 1
-First name: one
-Surname : me
-[...]
-## there is no result on 4
-[...]
-ID: 5
-First name: Flag
-Surname : GetThe
-[...]
-```
+![id0to5](https://user-images.githubusercontent.com/22397481/207928622-834fdf21-ae87-47c8-bca3-e282f4c82a5c.gif)
+</details>
 
 Let's see if we can attack this page with SQL Injection technique, by putting a `'`, a quote character. (if the error message like below prints, it means the environment is vulnerable for SQL Injection)
 
