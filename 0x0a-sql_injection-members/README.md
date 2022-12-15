@@ -1,6 +1,6 @@
 # SQL Injection (MEMBERS)
 
-There is a `Members` top left of the main page of the site, will navigate to Members(http://{IP_ADDR}/index.php?page=member) webpage, which asks to input some sort of member ID number. Once you put any number and submit, it will bring a result with corresponding ID number with `ID`, `First name`, `Surname`
+On [Members page](http://192.168.56.101/index.php?page=member) a form allows to search information on a given member using its ID number.
 
 ```
 [...]
