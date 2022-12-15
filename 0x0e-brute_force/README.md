@@ -1,6 +1,12 @@
 # Brute Force
 
-From exploiting [SQL Injection Vulneribilities](../0x0a-sql_injection-members/README.md), it is recoginzed that the schema `Member_Brute_Force` existed on the database. We know the schema exists, but certainly don't know what tables, or other information exists in the schema.
+On [the member search page](http://192.168.56.101/?page=member) querying list of Databases name from Information Schema shows that the schema named **Member_Brute_Force** exists.
+
+```
+1 AND 1=1 UNION SELECT 1, table_schema FROM information_schema.tables
+```
+![Member_Brute_Force DB](https://user-images.githubusercontent.com/22397481/207932328-93288cf9-01dc-4155-8ae7-b2670c054f07.jpeg)
+
 
 But using the query `1 and 1=1 UNION SELECT table_name, 2 FROM information_schema.tables WHERE table_schema='Member_Brute_Force'` will give an error, as the quotation would cause an error from the php.
 
