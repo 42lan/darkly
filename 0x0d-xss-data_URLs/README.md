@@ -4,7 +4,7 @@ In the first section of the home page, an image redirect to [the location](http:
 
 The value of `data` attribute change accordingly the value GET parameter `src` in the URL.
 
-Using special format, called [data URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs), in `src` allow to embed small inline data in HTML document.
+Using special format, called [Data URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs), in `src` allow to embed small inline data in HTML document.
 
 <details>
 <summary>Embed a text file</summary>
@@ -12,6 +12,7 @@ Using special format, called [data URLs](https://developer.mozilla.org/en-US/doc
 ```
 data:text/html,<h1 style="font-size:75px; background-color:red">Hello World!</h1>
 ```
+<img width="1680" alt="image" src="https://user-images.githubusercontent.com/22397481/207857428-9feaa61f-fc22-4b38-9168-dcad62fd70fa.png">
 </details>
 
 <details>
@@ -20,16 +21,17 @@ data:text/html,<h1 style="font-size:75px; background-color:red">Hello World!</h1
 ```
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAo0lEQVR42u3RAQ0AAAjDMO5fNCCDkG4SmupdZwoQIAICRECACAgQAQECBIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACAgQIEAEBIiAABGQ7w2x48edS3GF7AAAAABJRU5ErkJggg==
 ```
+<img width="1680" alt="image" src="https://user-images.githubusercontent.com/22397481/207856826-f0abe6b6-e29e-4c57-bf88-ef8dcb737ca0.png">
 </details>
 
-Not only any data can be passed, but script can be used to this which allow execution of the code, as shown on the [example](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/46742040/202879013-06386e15-be43-4894-9a3c-c3630a569a0e.png">
 <details>
 <summary>Embed a scipt</summary>
 
 ```
 data:text/html,<script>alert('42 - The answer to life, the universe and everything')</script>
 ```
+<img width="1680" alt="image" src="https://user-images.githubusercontent.com/22397481/207857154-5443b8d2-b45c-4fc0-a0e6-6b828ffcab8a.png">
+
 </details>
 
 
