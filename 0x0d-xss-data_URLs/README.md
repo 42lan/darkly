@@ -43,7 +43,7 @@ PHNjcmlwdD5hbGVydCgnNDIgLSBUaGUgYW5zd2VyIHRvIGxpZmUsIHRoZSB1bml2ZXJzZSBhbmQgZXZl
 ```
 <img width="1680" alt="image" src="https://user-images.githubusercontent.com/22397481/207858953-5b451dce-3444-407a-8dd4-f92fdb4ff12e.png">
 
-# Remediation
+## Remediation
 - **Sanitize user input** checking for malicious code (for example using [DOMPurify](https://github.com/cure53/DOMPurify))
 - **Escaping user input** from XSS to ensuring it’s secure before rendering it for the end user
 
