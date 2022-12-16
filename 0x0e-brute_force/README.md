@@ -69,6 +69,10 @@ Loggin in with ID and password found, `id: admin, pw: shadow`, the token will be
 
 ## Remediation
 SQL Injection has become a common issue with database-driven web sites.
+- Utilize the principle of least privilege
+- Validate user input
+- Separate sensitive data and store it in different DB
 
 ***
 https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html
+https://learn.microsoft.com/en-us/sql/relational-databases/security/sql-injection
