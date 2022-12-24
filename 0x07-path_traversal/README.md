@@ -9,3 +9,8 @@ Proceeding path traversal, different messages are pop ups, until 7th level with 
 
 
 Trying to access \*NIX password file at http://192.168.56.101/?page=../../../../../../../etc/passwd, gives the flag.
+
+## Remediation
+- Sanitize user input by removing any characters used to exploit the vulnerability
+- Hard-code allowed file extensions (.html, .php, .xml, ...)
+- Accept only predefined values (pages)
