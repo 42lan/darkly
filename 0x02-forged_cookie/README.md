@@ -17,3 +17,7 @@ b326b5062b2f0e69046810717534cb09
 ```
 
 Changing value of saved cookie and refreshing the page gives the flag.
+
+## Remediation
+- Use encrypted value in the cookie
+- Verify cookie on server-side
