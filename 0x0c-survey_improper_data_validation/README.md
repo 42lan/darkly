@@ -8,3 +8,9 @@ However, by changing the value of `&valeur=` in the body of POST request, allow 
 
 ... or simply by changing the value of an option in the form
 ![image](https://user-images.githubusercontent.com/22397481/207579504-b9d71b83-dfdf-4a6c-8efa-3e668f41a63f.png)
+
+## Remediation
+- Implement client-side/server-side form validation
+
+***
+https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
