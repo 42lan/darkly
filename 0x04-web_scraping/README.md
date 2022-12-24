@@ -18,4 +18,5 @@ Toujours pas tu vas craquer non ?
 Tu veux de l'aide ? Moi aussi ! 
 ```
 ## Remediation
-Detect web scraping in order to block
+- Detect web scraping in order to block
+- State in the terms and conditions a prohibition on web scraping
