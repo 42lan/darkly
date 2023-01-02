@@ -38,6 +38,10 @@ validate_required(mtxMessage,"Message can not be empty.")
 
 However, it do not check if the user input contains HTML tags or JS script.
 
+```
+<script>alert("ok")</script>
+```
+
 > The limitation can be bypassed by removing [`maxlength` attribute](https://www.w3schools.com/tags/att_input_maxlength.asp) on `txtName` and `mtxtMessage` input fields.
 
 ## Remediation
